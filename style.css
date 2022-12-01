@@ -1,0 +1,84 @@
+p {
+  font-size: 7px;
+  text-align: right;
+  line-height: 3px;
+  margin-top: 8px;
+}
+form {
+  font-size: 12px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 24px;
+  text-align: right;
+}
+h3 {
+  font-size: 12px;
+  text-align: right;
+}
+a {
+  text-decoration: none;
+  color: rgb(70, 160, 202);
+}
+a:hover {
+  color: #fff;
+}
+.card {
+  background-color: #c8a4f1;
+  color: #ffff;
+  border-color: #868586;
+  margin-top: 40px;
+  opacity: 0.9;
+  font-family: "Urbanist", sans-serif;
+}
+.search-button {
+  background-color: rgba(143, 95, 191, 0.642);
+  color: #ffff;
+  border-radius: 10px;
+  border-color: #ffff;
+  box-shadow: 0;
+  transition: all 150ms ease-in-out;
+  opacity: 0.8;
+}
+.search-button:hover {
+  background-color: #fff;
+  color: rgba(143, 95, 191, 0.642);
+  border-color: rgba(143, 95, 191, 0.642);
+}
+.current-button {
+  background-color: rgb(70, 160, 202);
+  color: #ffff;
+  border-radius: 10px;
+  border-color: #ffff;
+  box-shadow: 0;
+  transition: all 150ms ease-in-out;
+  opacity: 0.8;
+}
+.current-button:hover {
+  background-color: #fff;
+  color: rgb(70, 160, 202);
+
+  border-color: rgb(70, 160, 202);
+}
+.present-icon {
+  font-size: 50px;
+  color: rgba(143, 95, 191, 0.642);
+}
+.weather-icon {
+  font-size: 30px;
+  color: rgba(143, 95, 191, 0.642);
+  padding-left: 21px;
+}
+.future-temp {
+  font-size: 8px;
+  text-align: center;
+}
+.future-date {
+  text-align: center;
+  font-size: 10px;
+}
+.degrees {
+  font-size: 16px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DM Weather Application</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/da1fff83f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <br />
+    <div class="container">
+      <div class="card" style="width: 30em">
+        <div class="card-body">
+          <form id="search-form">
+            <input
+              type="search"
+              id="city"
+              style="width: 10em"
+              placeholder="Location"
+            />
+            <input
+              type="submit"
+              value="Search"
+              class="search-button"
+              id="search-city"
+            />
+            <button class="current-button" id="current-button">Current</button>
+          </form>
+
+          <br />
+          <div class="row">
+            <div class="col-3">
+              <h1>
+                <span id="temperature"></span>
+                <span class="degrees"
+                  ><a href="#" id="farenheit">°F</a>/<a href="#" id="celsius"
+                    >°C</a
+                  ></span
+                >
+              </h1>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-cloud-sun present-icon"></i>
+            </div>
+            <div class="col-2">
+              <p>Humidity: <span id="humidity"></span></p>
+              <p>Wind: <span id="wind"></span></p>
+            </div>
+            <div class="col-5">
+              <h2 id="display-city"></h2>
+              <h3 id="date"></h3>
+              <h3 id="weather-description"></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="future-date">Sun</div>
+              <i class="fa-solid fa-cloud-sun weather-icon"></i>
+              <div class="future-temp">52° | 33°</div>
+            </div>
+            <div class="col">
+              <div class="future-date">Mon</div>
+              <i class="fa-solid fa-sun weather-icon"></i>
+              <div class="future-temp">49° | 29°</div>
+            </div>
+            <div class="col">
+              <div class="future-date">Tue</div>
+              <i class="fa-solid fa-cloud-rain weather-icon"></i>
+              <div class="future-temp">49° | 43°</div>
+            </div>
+            <div class="col">
+              <div class="future-date">Wed</div>
+              <i class="fa-solid fa-cloud-rain weather-icon"></i>
+              <div class="future-temp">50° | 35°</div>
+            </div>
+            <div class="col">
+              <div class="future-date">Thur</div>
+              <i class="fa-solid fa-cloud-sun weather-icon"></i>
+              <div class="future-temp">46° | 29°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
