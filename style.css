@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(163, 227, 237);
+}
 p {
   font-size: 7px;
   text-align: right;
@@ -29,7 +32,8 @@ a:hover {
   background-color: #c8a4f1;
   color: #ffff;
   border-color: #868586;
-  margin-top: 40px;
+  margin: 0 auto;
+  margin-top: 200px;
   opacity: 0.9;
   font-family: "Urbanist", sans-serif;
 }
@@ -81,4 +85,15 @@ a:hover {
 }
 .degrees {
   font-size: 16px;
+}
+.signature {
+  font-size: 10px;
+  font-family: "Urbanist", sans-serif;
+  color: rgba(143, 95, 191, 0.642);
+  text-align: center;
+  display: block;
+}
+.signature:hover {
+  color: #ffff;
+  text-decoration: underline;
 }
