@@ -11,7 +11,7 @@ form {
   font-size: 12px;
 }
 h1 {
-  font-size: 40px;
+  font-size: 45px;
 }
 h2 {
   font-size: 24px;
@@ -66,10 +66,13 @@ a:hover {
 
   border-color: rgb(70, 160, 202);
 }
-.present-icon {
-  font-size: 50px;
-  color: rgba(143, 95, 191, 0.642);
+#present-icon:hover {
+  opacity: 0.9;
 }
+#present-icon {
+  opacity: 1;
+}
+
 .weather-icon {
   font-size: 30px;
   color: rgba(143, 95, 191, 0.642);
@@ -84,7 +87,7 @@ a:hover {
   font-size: 10px;
 }
 .degrees {
-  font-size: 16px;
+  font-size: 12px;
 }
 .signature {
   font-size: 10px;

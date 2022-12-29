@@ -21,6 +21,7 @@
 
 //Function to display various information collected from API call such as name of city, description of weather, temperature, wind speed, and humidity
 function currentWeather(weather) {
+  console.log(weather.data);
   //Display name of city called through API
   let displayName = document.querySelector("#display-city");
   displayName.innerHTML = weather.data.name;
@@ -42,6 +43,11 @@ function currentWeather(weather) {
   //Display humidity + template literal to include percent sign
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${weather.data.main.humidity}%`;
+  let icon = document.querySelector("#present-icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`
+  );
 }
 //Function to take city input value and execute weather API call. Then currentWeather function runs
 function inputCity(cityName) {
@@ -109,6 +115,9 @@ function formatDate(date) {
 let currentTime = new Date();
 let timeAndDate = document.querySelector("#date");
 timeAndDate.innerHTML = formatDate(currentTime);
+
+/* let timeAndDate = document.querySelector("#date");
+  timeAndDate.innerHTML = formatDate(weather.data.dt * 1000);*/
 
 /*function changeFarenheitTemp() {
   let farenheitTemp = document.querySelector("#temperature");
