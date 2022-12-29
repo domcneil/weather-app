@@ -26,8 +26,9 @@ function currentWeather(weather) {
   let displayName = document.querySelector("#display-city");
   displayName.innerHTML = weather.data.name;
   // Display temperature of city input by user during API call
+  currentFahrenheitTemp = weather.data.main.temp;
   let displayTemp = document.querySelector("#temperature");
-  displayTemp.innerHTML = Math.round(weather.data.main.temp);
+  displayTemp.innerHTML = Math.round(currentFahrenheitTemp);
   // Display description of weather with capitalized first letter
   let weatherDescription = weather.data.weather[0].description;
   let firstLetterDescr = weatherDescription.charAt(0);
@@ -119,20 +120,29 @@ timeAndDate.innerHTML = formatDate(currentTime);
 /* let timeAndDate = document.querySelector("#date");
   timeAndDate.innerHTML = formatDate(weather.data.dt * 1000);*/
 
-/*function changeFarenheitTemp() {
-  let farenheitTemp = document.querySelector("#temperature");
-  farenheitTemp.innerHTML = "65";
+function showFahrenheitTemp() {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = document.querySelector("#temperature");
+  fahrenheitTemp.innerHTML = Math.round(currentFahrenheitTemp);
 }
 
-let farenheitLink = document.querySelector("#farenheit");
-farenheitLink.addEventListener("click", changeFarenheitTemp);
+let fahrenheitLink = document.querySelector("#farenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
-function changeCelsiusTemp() {
+function showCelsiusTemp() {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let celsiusTemp = document.querySelector("#temperature");
-  celsiusTemp.innerHTML = "18";
+  celsiusConversion = ((currentFahrenheitTemp - 32) * 5) / 9;
+  celsiusTemp.innerHTML = Math.round(celsiusConversion);
 }
 
 let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", changeCelsiusTemp);*/
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let currentFahrenheitTemp = null;
 
 inputCity("New York");

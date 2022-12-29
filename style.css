@@ -66,6 +66,13 @@ a:hover {
 
   border-color: rgb(70, 160, 202);
 }
+.degrees .active {
+  color: #ffff;
+}
+.degrees .active:hover {
+  cursor: default;
+  text-decoration: none;
+}
 #present-icon:hover {
   opacity: 0.9;
 }
