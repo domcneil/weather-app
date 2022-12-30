@@ -163,7 +163,6 @@ function formatForecastDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let dailyForecast = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
