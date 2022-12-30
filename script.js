@@ -155,19 +155,33 @@ celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let currentFahrenheitTemp = null;
 
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let futureDay = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = futureDay[date.getDay()];
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  console.log(response.data);
+  let dailyForecast = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  dailyForecast.forEach(function (forecastDay, index) {
+    let maxTemp = Math.round(forecastDay.temp.max);
+    let minTemp = Math.round(forecastDay.temp.min);
+    if (index < 6)
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col">
-                <div class="future-date">${day}</div>
-                <i class="fa-solid fa-cloud-sun weather-icon"></i>
-                <div class="future-temp">52° | 33°</div>
+                <div class="future-date">${formatForecastDate(
+                  forecastDay.dt
+                )}</div>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" width="30"/>
+                <div class="future-temp">${maxTemp}° | <span class="min-temp"> ${minTemp}°</span></div>
               </div>
            `;
   });

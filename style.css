@@ -85,13 +85,17 @@ a:hover {
   color: rgba(143, 95, 191, 0.642);
 }
 .future-temp {
-  font-size: 8px;
+  font-size: 9px;
 }
 .future-date {
   font-size: 10px;
 }
 .degrees {
   font-size: 12px;
+}
+.min-temp {
+  color: rgba(118, 118, 118, 0.778);
+  opacity: 0.9;
 }
 .signature {
   font-size: 10px;
