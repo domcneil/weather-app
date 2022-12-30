@@ -19,9 +19,17 @@
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${request.data.main.humidity} %`;}*/
 
+//Function to get longitude and latitude of input city make API call and then call function to display forecast data
+function getForecast(coords) {
+  let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
+  let lat = coords.lat;
+  let lon = coords.lon;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 //Function to display various information collected from API call such as name of city, description of weather, temperature, wind speed, and humidity
 function currentWeather(weather) {
-  console.log(weather.data);
   //Display name of city called through API
   let displayName = document.querySelector("#display-city");
   displayName.innerHTML = weather.data.name;
@@ -49,6 +57,8 @@ function currentWeather(weather) {
     "src",
     `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(weather.data.coord);
 }
 //Function to take city input value and execute weather API call. Then currentWeather function runs
 function inputCity(cityName) {
@@ -144,5 +154,26 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 let currentFahrenheitTemp = null;
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <div class="future-date">${day}</div>
+                <i class="fa-solid fa-cloud-sun weather-icon"></i>
+                <div class="future-temp">52° | 33°</div>
+              </div>
+           `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
 
 inputCity("New York");

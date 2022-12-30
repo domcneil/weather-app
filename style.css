@@ -83,14 +83,11 @@ a:hover {
 .weather-icon {
   font-size: 30px;
   color: rgba(143, 95, 191, 0.642);
-  padding-left: 21px;
 }
 .future-temp {
   font-size: 8px;
-  text-align: center;
 }
 .future-date {
-  text-align: center;
   font-size: 10px;
 }
 .degrees {
@@ -106,4 +103,7 @@ a:hover {
 .signature:hover {
   color: #ffff;
   text-decoration: underline;
+}
+.weather-forecast {
+  text-align: center;
 }
