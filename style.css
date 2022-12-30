@@ -2,7 +2,7 @@ body {
   background-color: rgb(163, 227, 237);
 }
 p {
-  font-size: 7px;
+  font-size: 8px;
   text-align: right;
   line-height: 3px;
   margin-top: 8px;
@@ -103,10 +103,6 @@ a:hover {
   color: rgba(143, 95, 191, 0.642);
   text-align: center;
   display: block;
-}
-.signature:hover {
-  color: #ffff;
-  text-decoration: underline;
 }
 .weather-forecast {
   text-align: center;
