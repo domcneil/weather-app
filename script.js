@@ -1,24 +1,3 @@
-/*function currentLocationWeather(request) {
-  let displayName = document.querySelector("#display-city");
-  displayName.innerHTML = request.data.name;
-  let displayTemp = document.querySelector("#temperature");
-  displayTemp.innerHTML = Math.round(request.data.main.temp);
-  // Display description of weather with capitalized first letter
-  let weatherDescription = request.data.weather[0].description;
-  let firstLetterDescr = weatherDescription.charAt(0);
-  let firstLetterCapitalize = firstLetterDescr.toUpperCase();
-  let remainingString = weatherDescription.slice(1);
-  let weatherDescriptionDisplay = document.querySelector(
-    "#weather-description"
-  );
-  weatherDescriptionDisplay.innerHTML = firstLetterCapitalize + remainingString;
-  //Display windspeed + template literal to include MPH
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = ` ${Math.round(request.data.wind.speed)} mph`;
-  //Display humidity + template literal to include percent sign
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${request.data.main.humidity} %`;}*/
-
 //Function to get longitude and latitude of input city make API call and then call function to display forecast data
 function getForecast(coords) {
   let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
